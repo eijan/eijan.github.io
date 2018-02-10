@@ -5,11 +5,12 @@
 InfluxDB操作记录
 ----------------
 在不设置用户名和密码的情况下通过终端打开 **influxDB**
-
->zypc@zypc-MS-7851:~$ influx
->Visit https://enterprise.influxdata.com to register for updates, InfluxDB server management, and monitoring.
->Connected to http://localhost:8086 version 0.13.0
->InfluxDB shell version: 0.13.0
+```
+> zypc@zypc-MS-7851:~$ influx
+Visit https://enterprise.influxdata.com to register for updates, InfluxDB server management, and monitoring.
+Connected to http://localhost:8086 version 0.13.0
+InfluxDB shell version: 0.13.0
+```
 ----------
 
 使用帮助，不能直接使用**'?'**
