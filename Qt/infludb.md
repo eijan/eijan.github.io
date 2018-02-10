@@ -40,27 +40,35 @@ InfluxDB操作记录
 ----------
 
 创建数据库
-> >CREATE DATABASE nimbot
-> >use nimbot
-> Using database nimbot
+```
+ > CREATE DATABASE nimbot
+ > use nimbot
+ Using database nimbot
+```
 ----------
 
 删除数据库
-> DROP DATABASE "database name"
+```
+ DROP DATABASE "database name"
+```
 ----------
 
 显示所有的数据库
-> >show databases
-> name: databases
-> ---------------
-> name
-> _internal
-> zydb
+```
+> show databases
+ name: databases
+
+ name
+ _internal
+ zydb
+```
 ----------
 
 使用数据库
-> >use zydb
-> Using database zydb
+```
+>use zydb
+Using database zydb
+```
 ----------
 
 
