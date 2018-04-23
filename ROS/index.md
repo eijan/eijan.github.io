@@ -11,13 +11,20 @@ RosBridgeClient, a .NET API to ROS using rosbridge_suite on the ROS side.
 UrdfImporter, a URDF file parser for .NET applications.
 RosSharp.unitypackage, a Unity Asset package providing Unity-specific extensions to RosBridgeClient and UrdfImporter.
 ROS#可以实现功能有
-1. Communicate：通过Windows应用程序与ROS进行通讯（Linux不可以吗？）；订阅和发布主题，调用和发布服务，设置和获取参数以及使用rosbridge套件提供的所有功能。
-2. Import：将机器人的URDF模型作为GameObject导入到Unity3D中。 使用robot_description服务直接从ROS系统导入数据，或通过复制到Unity资源文件夹中的URDF文件导入数据。
-3. Control：通过Unity3D控制真实机器人。
-4. Visualize：在Unity3D中可视化机器人的实际状态和传感器数据。
-5. Simulate：使用URDF提供的数据在Unity3D中实现机器人仿真（这里不使用与ROS的连接的方式）。 除了网格和纹理的可视化组件之外，还可以导入了刚体的关节参数、质量、CoMs、惯性和碰撞等规格指标
-6. And much more：更多功能！ROS＃可用于各种应用，如机器学习、人机交互、远程监控、虚拟原型、机器人操作、游戏和娱乐等！
-参考github WIKI 网址：https://github.com/siemens/ros-sharp/wiki/Info_Showcases
+
+ - (1)在/opt/ros/kinetic/share/rosbridge_server. Communicate：通过Windows应用程序与ROS进行通讯（Linux不可以吗？）；订阅和发布主题，调用和发布服务，设置和获取参数以及使用rosbridge套件提供的所有功能。
+
+ - (2)在/opt/ros/kinetic/share/rosbridge_server. Import：将机器人的URDF模型作为GameObject导入到Unity3D中。 使用robot_description服务直接从ROS系统导入数据，或通过复制到Unity资源文件夹中的URDF文件导入数据。
+
+ - (3)在/opt/ros/kinetic/share/rosbridge_server. Control：通过Unity3D控制真实机器人。
+
+ - (4)在/opt/ros/kinetic/share/rosbridge_server. Visualize：在Unity3D中可视化机器人的实际状态和传感器数据。
+
+ - (5)在/opt/ros/kinetic/share/rosbridge_server. Simulate：使用URDF提供的数据在Unity3D中实现机器人仿真（这里不使用与ROS的连接的方式）。 除了网格和纹理的可视化组件之外，还可以导入了刚体的关节参数、质量、CoMs、惯性和碰撞等规格指标
+
+ - (6)在/opt/ros/kinetic/share/rosbridge_server. And much more：更多功能！ROS＃可用于各种应用，如机器学习、人机交互、远程监控、虚拟原型、机器人操作、游戏和娱乐等！
+
+ 参考github WIKI 网址：https://github.com/siemens/ros-sharp/wiki/Info_Showcases
 
 ROS# 安装过程：
 1.3 ROS on Ubuntu (ubuntu 16.04 已经安装)
@@ -68,8 +75,7 @@ zypc@zypc-All-Series:~/rossharp_ws$ source devel/setup.bash
 
 
 开启新的标签页查看存在的服务（如下下图）
-rosbridge-server 包位置在/opt/ros/kinetic/share/rosbridge_server
-打开/opt/ros/kinetic/share/rosbridge_server/launch/rosbridge_websocket.launch
+rosbridge-server 包位置在/opt/ros/kinetic/share/rosbridge_server打开/opt/ros/kinetic/share/rosbridge_server/launch/rosbridge_websocket.launch
 可以看到 launch 启动了 rosbridge_websocket节点，rosapi节点下的众多服务。
 打开/opt/ros/kinetic/share/rosapi/srv 可以看到 rosapi 包下有多种类型的srv, 
 
