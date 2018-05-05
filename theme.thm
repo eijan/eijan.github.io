@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>张颖的博客</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+  	<meta name="keywords" content="gopher" />
+  	<meta name="author" content="FREEHTML5.CO" />
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+  	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  	<link rel="shortcut icon" href="favicon.ico">
+
+  	<!-- Google Webfont -->
+	<!-- <link href='http://fonts.useso.com/css?family=Lato:300,400|Crimson+Text' rel='stylesheet' type='text/css'> -->
+	<!-- Themify Icons -->
+	<link rel="stylesheet" href="http://7xku3c.com1.z0.glb.clouddn.com/static/css/themify-icons.css">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="http://7xku3c.com1.z0.glb.clouddn.com/static/css/bootstrap.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="http://7xku3c.com1.z0.glb.clouddn.com/static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="http://7xku3c.com1.z0.glb.clouddn.com/static/css/owl.theme.default.min.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="http://7xku3c.com1.z0.glb.clouddn.com/static/css/magnific-popup.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="http://7xku3c.com1.z0.glb.clouddn.com/static/css/superfish.css">
+	<!-- Easy Responsive Tabs -->
+	<link rel="stylesheet" href="http://7xku3c.com1.z0.glb.clouddn.com/static/css/easy-responsive-tabs.css">
+
+	
+
+	<!-- Theme Style -->
+	<link rel="stylesheet" href="http://7xku3c.com1.z0.glb.clouddn.com/static/css/style2.css?v=1">
+
+	
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="http://7xku3c.com1.z0.glb.clouddn.com/static/js/modernizr-2.6.2.min.js"></script>
+	<script src="http://7xku3c.com1.z0.glb.clouddn.com/static/js/respond.min.js"></script>
+	<![endif]-->
+
+
+<style type="text/css">
+.bg{
+	background-image: url('/bg.gif');
+	/*background-size: contain;*/
+	/*min-height: 510px;*/
+}
+.col-md-8{
+	min-height: 500px;
+	background-color:rgba(253,255,243,0.9);
+	/*opacity:0.8;*/
+}
+pre{
+	background-color: #C9CABB;
+	color: #376956;
+}
+.lineB{
+	background-color: #EFF0DC;
+}
+.line{
+	float:left;
+	width:25px;
+	background-color: #C9CABB;
+}
+.linenum{
+	color: rgba(27,31,35,0.3);
+	float: left;
+	padding-left: 3px;
+	width: 25px;
+	-moz-user-select: none; /*火狐*/
+	-webkit-user-select: none; /*webkit浏览器*/
+	-ms-user-select: none; /*IE10*/
+	-khtml-user-select: none; /*早期浏览器*/
+	user-select: none;
+}
+#fh5co-header-section.fh5co-scrolled{
+	background: #C3C3F3;
+}
+.hiddened{top: -90px;}
+/*.showed{top:0;z-index: 9999;}*/
+#logoOuter{
+	z-index: 1000;
+	position: fixed;
+}
+</style>
+
+	</head>
+	<body>
+<script src="http://7xku3c.com1.z0.glb.clouddn.com/static/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("pre").each(function(index, elem) {
+		var content = $(this).text();
+		var numctx = "<div class='line'>";
+		var lines = content.split("\n");
+		var result = '';
+		var ctx = '<code>';
+		if (lines.length<4) {return}
+		for (var i = 0; i < lines.length-1; i++) {
+			numctx += "<div class='linenum'>" + (i+1) + "</div>";
+			var c = lines[i];
+			if (c=="") {c="<br>";}
+			if (i%2==0) {
+				ctx+= "<div class='lineA'>" + c+"</div>";
+			}else{
+				ctx+= "<div class='lineB'>" + c+"</div>";
+			}
+		}
+		numctx += "</div>";
+		ctx += "</code>"
+		result += numctx + ctx;
+		$(this).html(result);
+	});
+	
+})
+$(document).ready(function(){  
+    var p=0,t=0;  
+  
+    $(window).scroll(function(e){  
+            p = $(this).scrollTop();
+            if(p<200){
+                $('#logoOuter').attr("hidden","hidden");
+            }
+            if (p<=50) {
+            	$('body').addClass('fh5co-mobile-menu-visible');
+                $('#fh5co-header-section').addClass('fh5co-scrolled');
+                // $('#fh5co-header-section').css("z-index",10);
+            }else{
+            
+	            if(t<=p){//下滚  
+                	$('#logoOuter').attr("hidden",null);
+	                $('body').removeClass('fh5co-mobile-menu-visible');
+	                $('#fh5co-header-section').removeClass('fh5co-scrolled');
+	                $('#fh5co-header-section').css("z-index",-1);
+	            }  
+	              
+	            if(t>p+50){//上滚  
+	            	$('#logoOuter').attr("hidden","hidden");
+	                $('body').addClass('fh5co-mobile-menu-visible');
+	                $('#fh5co-header-section').addClass('fh5co-scrolled');
+	                $('#fh5co-header-section').css("z-index",10);
+	            }  
+	            setTimeout(function(){t = p;},1500);   	
+            }      
+    });  
+});
+$(function(){  
+	if ( $('body').hasClass('fh5co-mobile-menu-visible')==false ) {
+		$('body').addClass('fh5co-mobile-menu-visible');
+	}
+	$('#fh5co-header-section').addClass('fh5co-scrolled');
+});
+</script>
+			
+			<div class="bg">
+			<!-- START #fh5co-header -->
+			<header id="fh5co-header-section" role="header" style="background-color: white;">
+				<div class="container">
+					
+					<!-- START #fh5co-logo -->
+					<!-- <h1 id="fh5co-logo" class="pull-left"><a href="index.html">Display</a></h1> -->
+					<div id="logoHeader" class="pull-left"><a href="/"><img id="logo-header" src="http://7xku3c.com1.z0.glb.clouddn.com//img/cat.png?imageView2/2/h/60" alt="张颖"></a></div>
+					
+					<!-- START #fh5co-menu-wrap -->
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+						<li><a href="/">HOME</a></li>
+						<li><a href="/Item/fanqie.html">番茄</a></li>
+						<li><a href="/Item">C++</a></li>
+						<li><a href="/Qt">QT</a></li>
+						<li><a href="/Qml">QML</a></li>
+						<li><a href="/ROS">ROS</a></li>
+						
+						<li><a href="/Linux">Linux</a></li>
+						<!-- <li>
+							<a href="#" class="fh5co-sub-ddown">ITEM</a>
+							<ul class="fh5co-sub-menu">
+							 	<li><a href="#">robot</a></li>
+								<li><a href="http://eijan.daoapp.io">zd</a></li>
+							</ul>	
+						</li> -->
+						<li class="cta"><a href="/Note">随手笔记</a></li>
+					</ul>
+
+					</nav>
+
+				</div>
+			</header>
+			
+
+				<div style="margin-top: 80px;">
+				<div id="fh5co-intro" class="fh5co-section">
+					<div class="container">
+						<div id="logoOuter" hidden="hidden" class="pull-left"><a href="/"><img id="logo" src="http://7xku3c.com1.z0.glb.clouddn.com//img/cat.png?imageView2/2/h/260" alt="张颖"></a></div>
+						<div class="row row-bottom-padded-sm">
+							<div class="col-md-8 col-md-offset-2">
+								{{.MDContent}}
+							</div>
+						</div>
+
+					</div>
+				</div>
+				</div>
+		
+		</div>
+			
+				<footer id="fh5co-footer" style="height: 30px">
+					<div class="container" >
+						
+						<p class="text-muted fh5co-no-margin-bottom text-center"><small>&copy; 2017 eijan. All rights reserved.</p>
+
+					</div>
+				</footer>
+			
+		<!-- jQuery -->
+		
+		<!-- jQuery Easing -->
+		<!-- <script src="http://7xku3c.com1.z0.glb.clouddn.com/static/js/jquery.easing.1.3.js"></script> -->
+		<!-- Bootstrap -->
+		<!-- <script src="http://7xku3c.com1.z0.glb.clouddn.com/static/js/bootstrap.js"></script> -->
+		<!-- Owl carousel -->
+		<script src="http://7xku3c.com1.z0.glb.clouddn.com/static/js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="http://7xku3c.com1.z0.glb.clouddn.com/static/js/jquery.magnific-popup.min.js"></script>
+		<!-- Superfish -->
+		<!-- <script src="http://7xku3c.com1.z0.glb.clouddn.com/static/js/hoverIntent.js"></script> -->
+		<script src="http://7xku3c.com1.z0.glb.clouddn.com/static/js/superfish.js"></script>
+		<!-- Easy Responsive Tabs -->
+		<script src="http://7xku3c.com1.z0.glb.clouddn.com/static/js/easyResponsiveTabs.js"></script>
+		<!-- FastClick for Mobile/Tablets -->
+		<!-- <script src="http://7xku3c.com1.z0.glb.clouddn.com/static/js/fastclick.js"></script> -->
+		<!-- Main JS -->
+		<!-- <script src="http://7xku3c.com1.z0.glb.clouddn.com/static/js/main2.js"></script> -->
+
+	</body>
+</html>
